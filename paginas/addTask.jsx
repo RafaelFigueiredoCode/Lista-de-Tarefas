@@ -57,33 +57,59 @@ const AddTask = ({ onTaskAdded }) => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20
+    flex: 1,
+    backgroundColor: '#F5F5F5',
+    padding: 20,
   },
   titulo: {
-    marginTop: 10,
-    fontWeight: 'bold'
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 8,
+    color: '#333',
+  },
+  label: {
+    fontSize: 16,
+    fontWeight: '600',
+    marginTop: 12,
+    marginBottom: 8,
+    color: '#555',
   },
   input: {
-    borderColor: '#999',
+    backgroundColor: '#FFFFFF',
+    borderColor: '#DDD',
     borderWidth: 1,
-    padding: 8,
+    borderRadius: 8,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    fontSize: 15,
     marginBottom: 10,
-    borderRadius: 5
+    color: '#333',
   },
   listatitle: {
-    marginTop: 20,
-    fontSize: 16,
-    fontWeight: 'bold'
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginVertical: 16,
+    color: '#444',
   },
   item: {
-    backgroundColor: '#eee',
-    padding: 10,
-    marginTop: 10,
-    borderRadius: 5
+    backgroundColor: '#FFF',
+    borderRadius: 10,
+    padding: 12,
+    marginBottom: 10,
+    borderLeftWidth: 4,
+    borderLeftColor: '#6C63FF',
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
+    elevation: 3,
   },
   itemtitle: {
-    fontWeight: 'bold'
-  }
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#222',
+    marginBottom: 4,
+  },
 });
 
 export default AddTask;
