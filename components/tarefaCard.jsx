@@ -1,6 +1,6 @@
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 
-export default function ItemCard({ title, description}) {
+export default function TarefaCard({ title, description}) {
     return (
         <TouchableOpacity style={styles.card}>
            <Text style={styles.cardTitle} >{title}</Text>
