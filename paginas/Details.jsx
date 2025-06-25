@@ -13,7 +13,7 @@ export default function DetailsScreen({ navigation, route }) {
                     <Text style={styles.itemdescricao}>{item.descricao}</Text>
                 </>
             ) : (
-                <Text style={styles.message}>Nenhum item selecionado</Text>
+                <Text style={styles.message}>Nenhum formulario criado</Text>
             )}
 
             <TouchableOpacity
@@ -27,46 +27,18 @@ export default function DetailsScreen({ navigation, route }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F5F5F5',
-    padding: 20,
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 26,
-    fontWeight: 'bold',
-    marginBottom: 24,
-    color: '#333',
-    textAlign: 'center',
-  },
-  label: {
-    fontSize: 16,
-    fontWeight: '600',
-    marginBottom: 6,
-    color: '#444',
-  },
-  input: {
-    backgroundColor: '#EFEFEF',
-    borderRadius: 10,
-    paddingHorizontal: 14,
-    paddingVertical: 10,
-    fontSize: 16,
-    marginBottom: 20,
-    color: '#333',
-  },
-  button: {
-    backgroundColor: '#6C63FF',
-    paddingVertical: 14,
-    borderRadius: 10,
-    alignItems: 'center',
-    marginTop: 10,
-    elevation: 3,
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
-    textTransform: 'uppercase',
-  },
-});
+    container: {
+        flex: 1,
+        backgroundColor: '#f5f5f5',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 20,
+    },
+    title: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 20,
+        color: '#333',
+    },
+    // estilização da linha 29 até a 42 eu fiz vic,pode começar o resto a partir daqui e modificar oq a fiz a vontase,só fiz de base.//
+})
