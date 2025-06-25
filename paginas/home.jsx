@@ -1,22 +1,41 @@
 import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native';
 import TarefaCard from '../components/tarefaCard.jsx';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-const DATA = [{id: '1', title: 'Item 1'},
-    {id: '1', title: 'Item 1'},
-    {id: '1', title: 'Item 1'},
+const DATA = [
+  { id: '1', title: 'Item 1', description: 'Descrição 1' },
+  { id: '2', title: 'Item 2', description: 'Descrição 2' },
+  { id: '3', title: 'Item 3', description: 'Descrição 3' },
 ];
 
 export default function Home({ navigation }) {
-  const renderItem = ({ item }) => (
-    <TarefaCard title={item.title} description={item.description} />
-  );
+  const [itensRiscados, setItensRiscados] = useState({});
+
+  const toggleRiscarItem = (id) => {
+    setItensRiscados((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
+  const renderItem = ({ item }) => {
+    const riscado = itensRiscados[item.id];
+
+    return (
+      <TarefaCard
+        title={item.title}
+        description={item.description}
+        riscado={riscado}
+        onPress={() => toggleRiscarItem(item.id)}
+      />
+    );
+  };
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tela Inicial</Text>
       <Text style={styles.title}>Lista de Itens</Text>
-      
+
       <FlatList
         data={DATA}
         renderItem={renderItem}
