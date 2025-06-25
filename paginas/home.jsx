@@ -3,7 +3,6 @@ import TarefaCard from '../components/tarefaCard.jsx';
 import { useState } from 'react';
 import Form from './addTask.jsx';
 
-<<<<<<< Updated upstream
 
 export default function Home({ navigation }) {
   const [itensRiscados, setItensRiscados] = useState({});
@@ -61,51 +60,6 @@ export default function Home({ navigation }) {
     
   );
 }
-=======
-export default function Home({ navigation, tarefas }) {
-    const [itensRiscados, setItensRiscados] = useState({});
-  
-    const toggleRiscarItem = (id) => {
-      setItensRiscados((prev) => ({
-        ...prev,
-        [id]: !prev[id],
-      }));
-    };
-  
-    const renderItem = ({ item }) => {
-      const riscado = itensRiscados[item.id];
-  
-      return (
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Details', { tarefa: item })}
-        >
-          <TarefaCard
-            title={item.title}
-            description={item.descricao}
-            riscado={riscado}
-            onPress={() => toggleRiscarItem(item.id)}
-          />
-        </TouchableOpacity>
-      );
-    };
-  
-    return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Tela Inicial</Text>
-        <FlatList
-          data={tarefas}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id}
-          style={styles.list}
-          ListHeaderComponent={() => (
-            <Text style={styles.listHeader}>Minhas Tarefas</Text>
-          )}
-        />
-      </View>
-    );
-  }
-  
->>>>>>> Stashed changes
 
 const styles = StyleSheet.create({
   container: {
