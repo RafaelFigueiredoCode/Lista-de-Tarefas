@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, Text, FlatList, StyleSheet } from 'react-native';
+import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 
-const AddTask = ({ onTaskAdded }) => {
-  const [title, settitle] = useState('');
+export default function Form({ route, navigation }) {
+  const [title, setTitle] = useState('');
   const [descricao, setDescricao] = useState('');
-  const [listaTarefas, setListaTarefas] = useState([]);
+
+  const { onAdd } = route.params; 
 
   const adicionarTarefa = () => {
     if (title.trim() === '' || descricao.trim() === '') return;
@@ -12,48 +13,34 @@ const AddTask = ({ onTaskAdded }) => {
     const novaTarefa = {
       id: Date.now().toString(),
       title,
-      descricao
+      descricao,
     };
 
-    const novaLista = [...listaTarefas, novaTarefa];
-    setListaTarefas(novaLista);
-    settitle('');
-    setDescricao('');
-    if (onTaskAdded) onTaskAdded(novaTarefa);
+    if (onAdd) onAdd(novaTarefa); 
+
+    navigation.goBack(); 
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Título</Text>
+      <Text style={styles.label}>Título</Text>
       <TextInput
         style={styles.input}
         value={title}
-        onChangeText={settitle}
-        placeholder="Digite o título da tarefa"
+        onChangeText={setTitle}
+        placeholder="Digite o título"
       />
       <Text style={styles.label}>Descrição</Text>
       <TextInput
         style={styles.input}
         value={descricao}
         onChangeText={setDescricao}
-        placeholder="Digite a descrição da tarefa"
+        placeholder="Digite a descrição"
       />
       <Button title="Adicionar Tarefa" onPress={adicionarTarefa} />
-
-      <Text style={styles.listatitle}>Tarefas Adicionadas:</Text>
-      <FlatList
-        data={listaTarefas}
-        keyExtractor={item => item.id}
-        renderItem={({ item }) => (
-          <View style={styles.item}>
-            <Text style={styles.itemtitle}>{item.title}</Text>
-            <Text>{item.descricao}</Text>
-          </View>
-        )}
-      />
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
