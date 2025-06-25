@@ -1,11 +1,20 @@
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 
-export default function TarefaCard({ title, description}) {
+export default function TarefaCard({ title, description, onPress}) {
     return (
+        <View>
         <TouchableOpacity style={styles.card}>
            <Text style={styles.cardTitle} >{title}</Text>
            <Text style={styles.cardDescription} >{description}</Text>
         </TouchableOpacity>
+        <TouchableOpacity>
+            <Image 
+            source={require('./download.png')}
+            style={styles.image}
+            onPress={onPress}
+            />
+        </TouchableOpacity>
+        </View>
     )
 }
 const styles = StyleSheet.create({
@@ -31,4 +40,10 @@ const styles = StyleSheet.create({
      fontWeight: 'bold',
      color: '#333',
     },
+    image: {
+        width: 30,
+        height: 30,
+        marginBottom: 10
+
+    }
 })

@@ -2,7 +2,10 @@ import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native
 import TarefaCard from '../components/tarefaCard.jsx';
 import { useState, useEffect } from 'react';
 
-const DATA = [];
+const DATA = [{id: '1', title: 'Item 1'},
+    {id: '1', title: 'Item 1'},
+    {id: '1', title: 'Item 1'},
+];
 
 export default function Home({ navigation }) {
   const renderItem = ({ item }) => (
