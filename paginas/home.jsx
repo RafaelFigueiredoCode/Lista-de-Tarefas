@@ -30,7 +30,7 @@ export default function Home({ navigation }) {
           descricao={item.descricao}
           riscado={riscado}
           onPress={() => toggleRiscarItem(item.id)}
-          
+          onPressDetails={() => navigation.navigate('Details', { item } )}
         />
       </TouchableOpacity>
     );
@@ -40,9 +40,6 @@ export default function Home({ navigation }) {
     <View style={styles.container}>
       <Text style={styles.title}>Tela Inicial</Text>
       <Text style={styles.title}>Lista de Itens</Text>
-
-      
-      <Form onTaskAdded={handleTaskAdded} />
 
       <FlatList
         data={tarefas}
