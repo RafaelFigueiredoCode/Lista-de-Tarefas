@@ -32,7 +32,7 @@ export default function App() {
           name="Details"
           component={DetailsScreen}
           options={{
-            title: 'Vizualidor da Tarefa',
+            title: 'Visualidor da Tarefa',
             headerStyle: { backgroundColor: '#007bff' },
             headerTintColor: '#fff',
           }}
