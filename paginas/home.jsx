@@ -5,7 +5,6 @@ import Form from './addTask.jsx';
 
 export default function Home({ navigation }) {
   const [itensRiscados, setItensRiscados] = useState({});
-
   const [tarefas, setTarefas] = useState([]);
 
   const handleTaskAdded = (novaTarefa) => {
@@ -23,12 +22,16 @@ export default function Home({ navigation }) {
     const riscado = itensRiscados[item.id];
 
     return (
-      <TarefaCard
-        title={item.title}
-        descricao={item.descricao}
-        riscado={riscado}
-        onPress={() => toggleRiscarItem(item.id)}
-      />
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Details', { tarefa: item })}
+      >
+        <TarefaCard
+          title={item.title}
+          descricao={item.descricao}
+          riscado={riscado}
+          onPress={() => toggleRiscarItem(item.id)}
+        />
+      </TouchableOpacity>
     );
   };
 
@@ -36,12 +39,12 @@ export default function Home({ navigation }) {
     <View style={styles.container}>
       <Text style={styles.title}>Tela Inicial</Text>
       <Text style={styles.title}>Lista de Itens</Text>
-      onTaskAdded={handleTaskAdded}
+
 
       <FlatList
         data={tarefas}
         renderItem={renderItem}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.id.toString()}
         style={styles.list}
         ListHeaderComponent={() => (
           <Text style={styles.listHeader}>Meus Itens</Text>
@@ -56,54 +59,8 @@ export default function Home({ navigation }) {
         <Text style={styles.buttonText}> Quer Adicionar mais uma Tarefa?</Text>
       </TouchableOpacity>
     </View>
-    
   );
 }
-
-<<<<<<< Updated upstream
-export default function Home({ navigation, tarefas }) {
-    const [itensRiscados, setItensRiscados] = useState({});
-  
-    const toggleRiscarItem = (id) => {
-      setItensRiscados((prev) => ({
-        ...prev,
-        [id]: !prev[id],
-      }));
-    };
-  
-    const renderItem = ({ item }) => {
-      const riscado = itensRiscados[item.id];
-  
-      return (
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Details', { tarefa: item })}
-        >
-          <TarefaCard
-            title={item.title}
-            description={item.descricao}
-            riscado={riscado}
-            onPress={() => toggleRiscarItem(item.id)}
-          />
-        </TouchableOpacity>
-      );
-    };
-  
-    return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Tela Inicial</Text>
-        <FlatList
-          data={tarefas}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id}
-          style={styles.list}
-          ListHeaderComponent={() => (
-            <Text style={styles.listHeader}>Minhas Tarefas</Text>
-          )}
-        />
-      </View>
-    );
-  }
-  
 
 const styles = StyleSheet.create({
   container: {
@@ -186,5 +143,3 @@ const styles = StyleSheet.create({
     letterSpacing: 1.5,
   },
 });
-=======
->>>>>>> Stashed changes
