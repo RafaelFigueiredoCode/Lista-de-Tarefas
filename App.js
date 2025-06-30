@@ -2,7 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './paginas/home'
 import AddTask from './paginas/addTask'
-import DetailsScreen from './paginas/detalhes'
+import DetailsScreen from './paginas/Details'
 
 const Stack = createStackNavigator();
 
