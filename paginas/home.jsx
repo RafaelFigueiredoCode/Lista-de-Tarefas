@@ -30,7 +30,7 @@ export default function Home({ navigation }) {
           descricao={item.descricao}
           riscado={riscado}
           onPress={() => toggleRiscarItem(item.id)}
-          // onPressDetails removido para evitar conflito
+          
         />
       </TouchableOpacity>
     );
@@ -41,7 +41,7 @@ export default function Home({ navigation }) {
       <Text style={styles.title}>Tela Inicial</Text>
       <Text style={styles.title}>Lista de Itens</Text>
 
-      {/* Form para adicionar nova tarefa */}
+      
       <Form onTaskAdded={handleTaskAdded} />
 
       <FlatList
@@ -71,16 +71,18 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFF8FB',
     padding: 24,
+    alignItems: 'center',
+    justifyContent: 'flex-start',
   },
   title: {
-    fontSize: 28,
+    fontSize: 34,
     fontWeight: '700',
     color: '#9B65E6',
     textAlign: 'center',
-    marginBottom: 10,
+    marginBottom: 20,
   },
   subtitle: {
-    fontSize: 18,
+    fontSize: 22,
     fontWeight: '600',
     color: '#AB88F9',
     textAlign: 'center',
@@ -88,51 +90,25 @@ const styles = StyleSheet.create({
   },
   list: {
     marginTop: 12,
+    width: '100%',
+    paddingHorizontal: 16,
   },
   listHeader: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: '600',
     color: '#7D6AFF',
     marginBottom: 14,
     paddingLeft: 8,
-  },
-  item: {
-    backgroundColor: '#F3E9FF',
-    borderRadius: 20,
-    padding: 18,
-    marginBottom: 16,
-    flexDirection: 'row',
-    alignItems: 'center',
-    shadowColor: '#A67FFF',
-    shadowOpacity: 0.25,
-    shadowOffset: { width: 0, height: 6 },
-    shadowRadius: 12,
-    elevation: 6,
-  },
-  itemContent: {
-    flex: 1,
-  },
-  itemTitle: {
-    fontSize: 17,
-    fontWeight: '700',
-    color: '#5B3B8B',
-  },
-  itemDescription: {
-    fontSize: 15,
-    color: '#866FC1',
-    marginTop: 4,
-  },
-  icon: {
-    marginRight: 14,
+    textAlign: 'center',
   },
   button: {
     backgroundColor: '#A67FFF',
-    paddingVertical: 16,
+    paddingVertical: 18,
     borderRadius: 25,
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 36,
-    width: '100%',
+    width: '90%',
     shadowColor: '#BFA1FF',
     shadowOpacity: 0.4,
     shadowOffset: { width: 0, height: 8 },
@@ -142,8 +118,9 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#FFF',
     fontWeight: '700',
-    fontSize: 17,
+    fontSize: 19,
     textTransform: 'uppercase',
     letterSpacing: 1.5,
+    textAlign: 'center',
   },
 });
