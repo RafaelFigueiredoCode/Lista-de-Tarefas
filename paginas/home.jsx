@@ -1,8 +1,6 @@
 import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native';
 import TarefaCard from '../components/tarefaCard.jsx';
 import { useState } from 'react';
-import Form from './addTask.jsx';
-
 
 export default function Home({ navigation }) {
   const [itensRiscados, setItensRiscados] = useState({});
@@ -29,7 +27,7 @@ export default function Home({ navigation }) {
         descricao={item.descricao}
         riscado={riscado}
         onPress={() => toggleRiscarItem(item.id)}
-        onPressDetails={() => navigation.navigate('Details')}
+        onPressDetails={() => navigation.navigate('Details', {item})}
       />
     );
   };

@@ -10,7 +10,7 @@ export default function DetailsScreen({ navigation, route }) {
             {item ? (
                 <>
                     <Text style={styles.itemTitle}>{item.title}</Text>
-                    <Text style={styles.itemDescription}>{item.description}</Text>
+                    <Text style={styles.itemDescription}>{item.descricao}</Text>
                 </>
             ) : (
                 <Text style={styles.message}>Nenhum item selecionado</Text>
