@@ -2,6 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './paginas/home'
 import AddTask from './paginas/addTask'
+import DetailsScreen from './paginas/detalhes'
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,15 @@ export default function App() {
           component={AddTask}
           options={{
             title: 'Adicionador de tarefas',
+            headerStyle: { backgroundColor: '#007bff' },
+            headerTintColor: '#fff',
+          }}
+        />
+        <Stack.Screen
+          name="Details"
+          component={DetailsScreen}
+          options={{
+            title: 'Vizualidor da Tarefa',
             headerStyle: { backgroundColor: '#007bff' },
             headerTintColor: '#fff',
           }}
