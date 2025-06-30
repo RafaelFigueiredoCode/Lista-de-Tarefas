@@ -30,8 +30,8 @@ export default function Home({ navigation }) {
           descricao={item.descricao}
           riscado={riscado}
           onPress={() => toggleRiscarItem(item.id)}
-          onPressDetails={() => navigation.navigate('Details')}
-      />
+          // onPressDetails removido para evitar conflito
+        />
       </TouchableOpacity>
     );
   };
@@ -41,6 +41,8 @@ export default function Home({ navigation }) {
       <Text style={styles.title}>Tela Inicial</Text>
       <Text style={styles.title}>Lista de Itens</Text>
 
+      {/* Form para adicionar nova tarefa */}
+      <Form onTaskAdded={handleTaskAdded} />
 
       <FlatList
         data={tarefas}
@@ -51,13 +53,14 @@ export default function Home({ navigation }) {
           <Text style={styles.listHeader}>Meus Itens</Text>
         )}
       />
+
       <TouchableOpacity
         style={styles.button}
         onPress={() =>
           navigation.navigate('Form', { onAdd: handleTaskAdded })
         }
       >
-        <Text style={styles.buttonText}> Quer Adicionar mais uma Tarefa?</Text>
+        <Text style={styles.buttonText}>Quer Adicionar mais uma Tarefa?</Text>
       </TouchableOpacity>
     </View>
   );
