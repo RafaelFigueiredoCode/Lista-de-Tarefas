@@ -71,24 +71,38 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 20,
   },
+
   title: {
-    fontSize: 28,
+    fontSize: 32,
     fontWeight: 'bold',
     color: '#7e57c2',
-    marginBottom: 10,
+    marginBottom: 6,
+    textAlign: 'center',
+    textShadowColor: '#e0cfff',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
+
   subtitle: {
-    fontSize: 24,
-    fontWeight: '600',
+    fontSize: 26,
+    fontWeight: '700',
     color: '#9575cd',
-    marginBottom: 10,
+    marginBottom: 12,
+    textAlign: 'center',
+    textShadowColor: '#e8dffb',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
+
   link: {
     fontSize: 18,
-    color: '#512da8',
+    color: '#5e35b1',
+    fontStyle: 'italic',
     textDecorationLine: 'underline',
     marginBottom: 40,
+    textAlign: 'center',
   },
+
   button: {
     position: 'absolute',
     bottom: 30,
@@ -102,6 +116,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 4,
   },
+
   buttonText: {
     color: '#fff',
     fontSize: 14,

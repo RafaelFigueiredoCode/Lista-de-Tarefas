@@ -15,7 +15,7 @@ export default function App() {
           component={Home}
           options={{
             title: 'Tela Principal',
-            headerStyle: { backgroundColor: '#007bff' },
+            headerStyle: { backgroundColor: '#b39ddb' },
             headerTintColor: '#fff',
           }}
         />
@@ -23,7 +23,7 @@ export default function App() {
           name="Form"
           component={AddTask}
           options={{
-            title: 'Adicionador de tarefas',
+            title: '#b39ddb',
             headerStyle: { backgroundColor: '#007bff' },
             headerTintColor: '#fff',
           }}
