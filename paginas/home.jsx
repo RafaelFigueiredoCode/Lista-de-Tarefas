@@ -60,6 +60,7 @@ export default function Home({ navigation }) {
   );
 }
 
+<<<<<<< Updated upstream
 export default function Home({ navigation, tarefas }) {
     const [itensRiscados, setItensRiscados] = useState({});
   
@@ -185,3 +186,5 @@ const styles = StyleSheet.create({
     letterSpacing: 1.5,
   },
 });
+=======
+>>>>>>> Stashed changes
