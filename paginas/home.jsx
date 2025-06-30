@@ -29,6 +29,7 @@ export default function Home({ navigation }) {
         descricao={item.descricao}
         riscado={riscado}
         onPress={() => toggleRiscarItem(item.id)}
+        onPressDetails={() => navigation.navigate('Details')}
       />
     );
   };

@@ -1,13 +1,10 @@
 import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 
-export default function TarefaCard({ title, description, riscado, onPress }) {
+export default function TarefaCard({ title, description, riscado, onPress, onPressDetails }) {
   return (
   <View>
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity style={styles.card} onPress={onPressDetails}>
       <Text style={[styles.cardTitle, riscado && styles.riscado]}>{title}</Text>
-      <Text style={[styles.cardDescription, riscado && styles.riscado]}>
-        {description}
-      </Text>
     </TouchableOpacity>
     <TouchableOpacity onPress={onPress}>
             <Image 
