@@ -3,8 +3,6 @@ import TarefaCard from '../components/tarefaCard.jsx';
 import { useState } from 'react';
 import Form from './addTask.jsx';
 
-<<<<<<< Updated upstream
-
 export default function Home({ navigation }) {
   const [itensRiscados, setItensRiscados] = useState({});
 
@@ -61,7 +59,7 @@ export default function Home({ navigation }) {
     
   );
 }
-=======
+
 export default function Home({ navigation, tarefas }) {
     const [itensRiscados, setItensRiscados] = useState({});
   
@@ -105,7 +103,6 @@ export default function Home({ navigation, tarefas }) {
     );
   }
   
->>>>>>> Stashed changes
 
 const styles = StyleSheet.create({
   container: {
