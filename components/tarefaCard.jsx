@@ -1,14 +1,26 @@
 import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
+import { useState } from 'react';
 
 export default function TarefaCard({ title, description, riscado, onPress, onPressDetails }) {
+
+   const [imgSrc, setImgSrc] = useState(require('./download.png'));
+
+  const alternarImagem = () => {
+    setImgSrc((prev) =>
+      prev === require('./download.png')
+        ? require('./x.png') 
+        : require('./download.png')
+    );
+  };
+
   return (
   <View>
     <TouchableOpacity style={styles.card} onPress={onPressDetails}>
       <Text style={[styles.cardTitle, riscado && styles.riscado]}>{title}</Text>
     </TouchableOpacity>
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity onPress={() => { onPress(); alternarImagem(); }}>
             <Image 
-            source={require('./download.png')}
+            source={imgSrc}
             style={styles.image}
             />
         </TouchableOpacity>
