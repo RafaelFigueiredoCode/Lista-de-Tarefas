@@ -23,7 +23,7 @@ export default function App() {
           name="Form"
           component={AddTask}
           options={{
-            title: '#b39ddb',
+            title: 'Criador de Tarefas',
             headerStyle: { backgroundColor: '#007bff' },
             headerTintColor: '#fff',
           }}
