@@ -24,8 +24,8 @@ export default function App() {
           component={AddTask}
           options={{
             title: 'Criador de Tarefas',
-            headerStyle: { backgroundColor: '#f8f0ff' },
-            headerTintColor: '#ce93d8',
+            headerStyle: { backgroundColor: '#b39ddb' },
+            headerTintColor: '#fff',
           }}
         />
         <Stack.Screen

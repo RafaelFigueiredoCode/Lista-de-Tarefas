@@ -37,7 +37,7 @@ export default function Form({ route, navigation }) {
         onChangeText={setDescricao}
         placeholder="Digite a descrição"
       />
-      <Button title="Adicionar Tarefa" onPress={adicionarTarefa} />
+      <Button style={styles.button} title="Adicionar Tarefa" onPress={adicionarTarefa} />
     </View>
   );
 }
@@ -98,4 +98,7 @@ const styles = StyleSheet.create({
     color: '#5B3B8B',
     marginBottom: 6,
   },
+  button: {
+     backgroundColor: '#b39ddb' 
+  }
 });
