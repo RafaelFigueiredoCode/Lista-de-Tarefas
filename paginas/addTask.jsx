@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
+import { View, TextInput, Button, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 export default function Form({ route, navigation }) {
   const [title, setTitle] = useState('');
   const [descricao, setDescricao] = useState('');
 
-  const { onAdd } = route.params; 
+  const { onAdd } = route.params;
 
   const adicionarTarefa = () => {
     if (title.trim() === '' || descricao.trim() === '') return;
@@ -16,9 +16,9 @@ export default function Form({ route, navigation }) {
       descricao,
     };
 
-    if (onAdd) onAdd(novaTarefa); 
+    if (onAdd) onAdd(novaTarefa);
 
-    navigation.goBack(); 
+    navigation.goBack();
   };
 
   return (
@@ -37,7 +37,14 @@ export default function Form({ route, navigation }) {
         onChangeText={setDescricao}
         placeholder="Digite a descrição"
       />
-      <Button style={styles.button} title="Adicionar Tarefa" onPress={adicionarTarefa} />
+      <View style={styles.Viewbutton}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={adicionarTarefa}
+        >
+          <Text style={styles.buttonText}>Adicionar Tarefa</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -98,7 +105,23 @@ const styles = StyleSheet.create({
     color: '#5B3B8B',
     marginBottom: 6,
   },
+  Viewbutton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   button: {
-     backgroundColor: '#b39ddb' 
+    backgroundColor: '#b39ddb',
+    borderRadius: 200,
+    width: 350,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  buttonText: {
+    fontSize:17,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    color: '#FFFFFF',
   }
 });
